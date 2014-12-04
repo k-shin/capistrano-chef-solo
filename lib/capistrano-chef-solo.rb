@@ -245,7 +245,7 @@ module Capistrano
           _cset(:chef_solo_gemfile) {
             gemfile = []
             gemfile << %{source "https://rubygems.org"}
-            gemfile << %{gem "ohai", #{chef_solo_use_ohai_version}}
+            gemfile << %{gem "ohai", #{chef_solo_use_ohai_version.inspect}}
             chef_solo_gem_dependencies.each do |name, options|
               if options.nil?
                 gemfile << %{gem #{name.dump}}
